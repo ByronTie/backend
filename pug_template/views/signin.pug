@@ -1,0 +1,17 @@
+doctype html  
+html(lang='en')  
+    head
+        title Sign In
+    body
+        h1 Sign In
+        if errormsg
+            div.error #{errormsg}       
+        div.container
+            form(method='POST' action='/api/auth/signin')
+                div.form-group
+                    label(for='username') Username
+                    input.form-control(type='text' id='username' placeholder='John Doe' name='username' value=name)
+                div.form-group
+                    label(for='password') Password
+                    input.form-control(type='password' id='password' placeholder='password' name='password')
+                button.btn.btn-primary(type='submit') Log in 
